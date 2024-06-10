@@ -23,7 +23,7 @@ const AdminPage = ({ employees, handleSetEmployees, handleReload }) => {
         { name: form.name, lastname: form.lastName, position: form.position }
       );
 
-      handleSetEmployees((prevEmployees) => [...prevEmployees, response.data]);
+      // handleSetEmployees((prevEmployees) => [...prevEmployees, response.data]);
       setForm({
         name: "",
         lastName: "",
@@ -40,7 +40,6 @@ const AdminPage = ({ employees, handleSetEmployees, handleReload }) => {
       `https://jsd5-mock-backend.onrender.com/member/${id}`,{member_id : id }
     )
     handleReload()
-    // handleSetEmployees(employees.filter((employee) => employee.id !== id));
   };
 
   return (
@@ -126,8 +125,7 @@ const AdminPage = ({ employees, handleSetEmployees, handleReload }) => {
             {employees.map((employee) => (
               <tr
                 key={
-                  employee.id ||
-                  employee.name + employee.lastName + employee.position
+                  employee.id
                 }
               >
                 <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
